@@ -738,6 +738,18 @@ footer .links a {
   .navbar-icons #shopping-cart {
     padding-right: 1rem;
   }
+  .contact p {
+    font-size: 1.2rem;
+  }
+  .contact .row {
+    flex-wrap: wrap;
+  }
+  .contact .row .map {
+    height: 30rem;
+  }
+  .contact .row form {
+    padding-top: 1rem;
+  }
 }
 /* Smartphone */
 @media (max-width: 525px) {
