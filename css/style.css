@@ -436,7 +436,7 @@ body {
   padding-top: 2rem;
 }
 .second-car .margin-row-car .row-car .main-bar .main-content {
-  margin: 2rem;
+  margin: 2rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   max-width: 100%;
