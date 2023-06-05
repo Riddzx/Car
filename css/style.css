@@ -190,7 +190,7 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url(img/carhero.jpg);
+  background-image: url("img/carhero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
