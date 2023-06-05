@@ -173,9 +173,6 @@ function addToCart(event) {
   // Append cloned item to the shopping cart
   cart.appendChild(clone);
 
-  // Add active class to shopping cart to show it
-  // cart.classList.add("active");
-
   // Prevent default button behavior (e.g., form submission)
   event.preventDefault();
 
