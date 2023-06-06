@@ -189,20 +189,17 @@ function addToCart(event) {
 // Tambahkan notifikasi badge ke dalam ikon shopping cart
 shoppingCartIcon.appendChild(notificationBadge);
 
-const toggleButton = document.querySelector("#mode");
+const toggleButton = document.querySelector("#toggle-mode");
 const themeContainer = document.querySelector(".theme-container");
-const iconElement = document.querySelector("#toggle-mode i");
 
 document.querySelector("#toggle-mode").onclick = (e) => {
   themeContainer.classList.toggle("light-mode");
   e.preventDefault();
 
   if (themeContainer.classList.contains("light-mode")) {
-    toggleButton.feather.replace("sun");
-    iconElement.feather.replace("moon");
+    toggleButton.innerHTML = '<i data-feather="sun"></i>';
   } else {
-    toggleButton.feather.replace("moon");
-    iconElement.feather.replace("sun");
+    toggleButton.innerHTML = '<i data-feather="moon"></i>';
   }
 
   feather.replace();

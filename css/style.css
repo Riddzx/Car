@@ -46,7 +46,7 @@ body {
   box-shadow: 6px 5px 8px var(--bg);
 }
 .theme-container.light-mode .container .card {
-  background-color: #3330e4;
+  background-color: rgb(51, 47, 208, 0.8);
   border: 3px solid var(--primary);
   box-shadow: 5px 3px 5px var(--bg);
 }
