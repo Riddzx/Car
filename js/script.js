@@ -1,3 +1,6 @@
+// Re-render the updated icon
+feather.replace();
+
 // Toglle class active hamburger-menu
 const navbarNav = document.querySelector(".navbar-nav");
 
@@ -185,3 +188,17 @@ function addToCart(event) {
 }
 // Tambahkan notifikasi badge ke dalam ikon shopping cart
 shoppingCartIcon.appendChild(notificationBadge);
+
+const toggleButton = document.querySelector("#mode");
+const themeContainer = document.querySelector(".theme-container");
+
+document.querySelector("#toggle-mode").onclick = (e) => {
+  themeContainer.classList.toggle("light-mode");
+  e.preventDefault();
+
+  if (themeContainer.classList.contains("light-mode")) {
+    toggleButton.feather.replace("sun");
+  }
+
+  feather.replace();
+};
