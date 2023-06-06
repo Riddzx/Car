@@ -27,6 +27,7 @@ body {
 }
 .theme-container.light-mode .navbar {
   background-color: rgb(51, 47, 208, 0.8);
+  border-bottom: 2px solid var(--primary);
 }
 .theme-container.light-mode .navbar .navbar-logo span {
   color: #000000;
