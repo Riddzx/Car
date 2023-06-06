@@ -25,6 +25,12 @@ body {
   background-color: white;
   color: #000000;
 }
+.theme-container.light-mode .navbar {
+  background-color: rgb(51, 47, 208, 0.8);
+}
+.theme-container.light-mode .navbar .navbar-logo span {
+  color: #000000;
+}
 .theme-container.light-mode .hero::after {
   background: linear-gradient(
     0deg,
@@ -40,14 +46,20 @@ body {
   box-shadow: 6px 5px 8px var(--bg);
 }
 .theme-container.light-mode .container .card {
-  background-color: #fff;
+  background-color: #3330e4;
   border: 3px solid var(--primary);
   box-shadow: 5px 3px 5px var(--bg);
+}
+.theme-container.light-mode .container .card .title-card span {
+  color: #fff;
+}
+.theme-container.light-mode .container .card .card-price {
+  color: #fff;
 }
 .theme-container.light-mode .container .card .card-text,
 .theme-container.light-mode .container .card .card-icons a,
 .theme-container.light-mode .container .card .icon-star {
-  color: var(--bg);
+  color: #fff;
 }
 .theme-container.light-mode .container .card .icon-star .star-full {
   fill: var(--bg);
@@ -76,6 +88,9 @@ body {
 }
 .theme-container.light-mode .second-car .row-car .main-bar .nav-main {
   border-bottom: 3px solid var(--bg);
+}
+.theme-container.light-mode .second-car .row-car .main-bar .nav-main a {
+  color: #000000;
 }
 .theme-container.light-mode
   .second-car

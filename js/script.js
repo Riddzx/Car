@@ -191,6 +191,7 @@ shoppingCartIcon.appendChild(notificationBadge);
 
 const toggleButton = document.querySelector("#mode");
 const themeContainer = document.querySelector(".theme-container");
+const iconElement = document.querySelector("#toggle-mode i");
 
 document.querySelector("#toggle-mode").onclick = (e) => {
   themeContainer.classList.toggle("light-mode");
@@ -198,6 +199,10 @@ document.querySelector("#toggle-mode").onclick = (e) => {
 
   if (themeContainer.classList.contains("light-mode")) {
     toggleButton.feather.replace("sun");
+    iconElement.feather.replace("moon");
+  } else {
+    toggleButton.feather.replace("moon");
+    iconElement.feather.replace("sun");
   }
 
   feather.replace();
