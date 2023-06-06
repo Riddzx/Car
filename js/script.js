@@ -192,7 +192,6 @@ shoppingCartIcon.appendChild(notificationBadge);
 const toggleButton = document.querySelector("#toggle-mode");
 const themeContainer = document.querySelector(".theme-container");
 const iconMode = document.querySelector("#icon-mode");
-
 document.querySelector("#toggle-mode").onclick = (e) => {
   themeContainer.classList.toggle("light-mode");
   e.preventDefault();

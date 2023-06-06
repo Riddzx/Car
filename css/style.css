@@ -148,10 +148,12 @@ body {
   right: 3.2rem;
   position: absolute;
   cursor: pointer;
+  transition: 0.8s ease-in-out;
 }
 .navbar-icons #icon-mode {
   position: absolute;
   right: 1rem;
+  transition: 0.8s ease-in-out;
 }
 /* -------------Navbar Start---------------- */
 .navbar {
@@ -187,7 +189,6 @@ body {
   display: inline-block;
   padding-top: 0.8rem;
 }
-
 .navbar .navbar-icons button {
   color: white;
   margin: 0 0.5rem;
