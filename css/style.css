@@ -29,6 +29,9 @@ body {
   background-color: rgb(51, 47, 208, 0.8);
   border-bottom: 2px solid var(--primary);
 }
+.theme-container.light-mode .navbar .navbar-icons button {
+  color: yellow;
+}
 .theme-container.light-mode .navbar .navbar-logo span {
   color: #000000;
 }
@@ -142,9 +145,13 @@ body {
   border: 2px solid var(--bg);
 }
 .navbar-icons #toggle-mode {
-  right: 2rem;
+  right: 3.2rem;
   position: absolute;
   cursor: pointer;
+}
+.navbar-icons #icon-mode {
+  position: absolute;
+  right: 1rem;
 }
 /* -------------Navbar Start---------------- */
 .navbar {
@@ -181,11 +188,12 @@ body {
   padding-top: 0.8rem;
 }
 
-.navbar .navbar-icons a {
+.navbar .navbar-icons button {
   color: white;
   margin: 0 0.5rem;
+  background-color: transparent;
 }
-.navbar .navbar-icons button {
+.navbar .navbar-icons a {
   color: white;
   margin: 0 0.5rem;
   background-color: transparent;
