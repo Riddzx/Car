@@ -196,6 +196,7 @@ document.querySelector("#toggle-mode").onclick = (e) => {
   themeContainer.classList.toggle("light-mode");
   e.preventDefault();
 
+  //icon swith mode
   if (themeContainer.classList.contains("light-mode")) {
     toggleButton.innerHTML = '<i data-feather="sun"></i>';
   } else {
