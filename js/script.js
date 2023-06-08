@@ -1,6 +1,3 @@
-// Re-render the updated icon
-feather.replace();
-
 // Toglle class active hamburger-menu
 const navbarNav = document.querySelector(".navbar-nav");
 
