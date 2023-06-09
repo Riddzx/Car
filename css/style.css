@@ -29,6 +29,9 @@ body {
   background-color: rgb(51, 47, 208, 0.8);
   border-bottom: 2px solid var(--primary);
 }
+.theme-container.light-mode .navbar .navbar-nav a:hover {
+  color: var(--bg);
+}
 .theme-container.light-mode .navbar .navbar-icons button {
   color: yellow;
 }
@@ -157,6 +160,18 @@ body {
 .theme-container.light-mode .shopping-cart .remove-button {
   color: var(--bg);
   background-color: transparent;
+}
+.theme-container.light-mode footer {
+  background-color: rgb(51, 47, 208, 0.8);
+}
+.theme-container.light-mode footer a:hover {
+  color: var(--bg);
+}
+.theme-container.light-mode footer .credit a {
+  color: var(--bg);
+}
+.theme-container.light-mode footer .credit a:hover {
+  color: #fff;
 }
 .theme-container.light-mode .shopping-cart .remove-button:hover {
   color: red;
