@@ -18,77 +18,75 @@ cardButton.forEach((button) => {
 // Remove item in cart
 function removeItem(event) {
   const deleteItem = confirm("Apakah anda ingin menghapus item dari cart");
-  if (deleteItem) {
-    const item = event.target.closest(".card-items");
-    const cartItems = cart.querySelectorAll(".card-items");
-    if (cartItems.length === 1) {
-      // Jika hanya ada 1 item,  apakah item yang dihapus adalah satu-satunya item
-      if (item === cartItems[0]) {
-        cart.classList.remove("active");
-      }
-    }
-    item.remove();
+  if (!deleteItem) {
+    return;
+  }
 
-    // Perbarui nilai notifikasi
-    const updatedCartItems = cart.querySelectorAll(".card-items");
-    notificationBadge.textContent = updatedCartItems.length;
+  const item = event.target.closest(".card-items");
+  const cartItems = cart.querySelectorAll(".card-items");
 
-    // Periksa apakah ada item di keranjang belanja, jika tidak, sembunyikan notifikasi
-    if (updatedCartItems.length === 0) {
-      notificationBadge.style.display = "none";
-    }
+  if (cartItems.length === 1 && item === cartItems[0]) {
+    cart.classList.remove("active");
+  }
+
+  item.remove();
+
+  const updatedCartItems = cart.querySelectorAll(".card-items");
+  notificationBadge.textContent = updatedCartItems.length;
+
+  if (updatedCartItems.length === 0) {
+    notificationBadge.style.display = "none";
   }
 }
 // icon notifikasi keranjang
 const shoppingCartIcon = document.querySelector("#shopping-cart");
 const notificationBadge = document.createElement("span");
 notificationBadge.classList.add("notification-badge");
+
+//Tambahkan notifikasi badge ke dalam ikon shopping cart
 function addToCart(event) {
   const addToCartConfirmation = confirm(
     "Apakah Anda ingin menambahkan item ke keranjang?"
   );
 
-  if (addToCartConfirmation) {
-    const template = document.querySelector("#product-template");
-    const clone = template.content.cloneNode(true);
-    const image = clone.querySelector(".product-img");
-    const productName = clone.querySelector(".product-name");
-    const itemPrice = clone.querySelector(".item-price");
-    const removeButton = clone.querySelector(".remove-button");
-
-    if (this.classList.contains("buy-button")) {
-      // Jika tombol "buy-button" di klik
-      productName.textContent = this.getAttribute("data-product");
-      itemPrice.textContent = `Price: $` + this.getAttribute("data-price");
-      image.src = this.getAttribute("data-image");
-    } else if (this.classList.contains("card-button")) {
-      // Jika tombol "card-button" di klik
-      const card = this.closest(".content-card");
-      const cardImage = card.querySelector(".content-img img");
-      const cardTitle = card.querySelector(".content-text h3");
-      const cardPrice = card.querySelector(".content-text .price-shop");
-
-      image.src = cardImage.src;
-      productName.textContent = cardTitle.textContent;
-      itemPrice.textContent = cardPrice.textContent;
-    }
-
-    removeButton.addEventListener("click", removeItem);
-
-    // Append cloned item to the shopping cart
-    cart.appendChild(clone);
-
-    feather.replace();
-
-    // icon notifikasi keranjang
-    const cartItems = cart.querySelectorAll(".card-items");
-    notificationBadge.textContent = cartItems.length;
-    notificationBadge.style.display = "inline-block";
+  if (!addToCartConfirmation) {
+    return;
   }
 
-  // Prevent default button behavior (e.g., form submission)
+  const template = document.querySelector("#product-template");
+  const clone = template.content.cloneNode(true);
+  const image = clone.querySelector(".product-img");
+  const productName = clone.querySelector(".product-name");
+  const itemPrice = clone.querySelector(".item-price");
+  const removeButton = clone.querySelector(".remove-button");
+
+  if (this.classList.contains("buy-button")) {
+    // Jika tombol "buy-button" di klik
+    productName.textContent = this.getAttribute("data-product");
+    itemPrice.textContent = `Price: $${this.getAttribute("data-price")}`;
+    image.src = this.getAttribute("data-image");
+  } else if (this.classList.contains("card-button")) {
+    // Jika tombol "card-button" di klik
+    const card = this.closest(".content-card");
+    const cardImage = card.querySelector(".content-img img");
+    const cardTitle = card.querySelector(".content-text h3");
+    const cardPrice = card.querySelector(".content-text .price-shop");
+
+    image.src = cardImage.src;
+    productName.textContent = cardTitle.textContent;
+    itemPrice.textContent = cardPrice.textContent;
+  }
+
+  removeButton.addEventListener("click", removeItem);
+
+  cart.appendChild(clone);
+
+  feather.replace();
+
+  const cartItems = cart.querySelectorAll(".card-items");
+  notificationBadge.textContent = cartItems.length;
+  notificationBadge.style.display = "inline-block";
+
   event.preventDefault();
 }
-
-// Tambahkan notifikasi badge ke dalam ikon shopping cart
 shoppingCartIcon.appendChild(notificationBadge);
